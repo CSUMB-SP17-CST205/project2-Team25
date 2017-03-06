@@ -1,6 +1,6 @@
 from PIL import Image
-import numpy as np
-import cv2
+import sys, math, Image
+
 
 ###    from documents on ilearn    ###
 # Creates a function to find median with myList as a parameter
@@ -16,32 +16,13 @@ def medianOdd(myList):
     return sortedValues[middleIndex]
 ###             ###              ###
 
-# Leaves a blank array to store the images in
+# Creates a blank array to store the images in
 imgs = []   
 # A loop to iterate through the images
 for p in range (1, 3):
 # Opens the image where the index is at
     imgs.append(Image.open(str(p) + ".jpg"))
-    face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-
-img = cv2.imread(str(p) + ".jpg")
-
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-faces = face_cascade.detectMultiScale(gray, 1.485, 5)
-
-# print(faces)
-
-for (i, (x,y,w,h)) in enumerate(faces):
         
-        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
-        #cv2.putText(img, "Actor #{}".format(i+1), (x,y-10,), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0,0,255), 2)
-        
-        roi_gray = gray[y:y+h, x:x+w]
-        roi_color = img[y:y+h, x:x+w]
-
-cv2.imwrite('image.jpg', img)
-cv2.waitKey()
 # Sets w to width and h to height of a 3D array
 w, h = imgs[0].size
 # Stores a new image into variable called editedImage
