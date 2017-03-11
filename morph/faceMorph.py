@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import numpy as np
 import cv2
 import sys
@@ -116,5 +115,7 @@ if __name__ == '__main__' :
 
 
     # Display Result
-    cv2.imshow("Morphed Face", np.uint8(imgMorph))
+    #cv2.imshow("Morphed Face", np.uint8(imgMorph))
+    cv2.imwrite('Morphed.jpg',imgMorph)
     cv2.waitKey(0)
+    #cv2.destroyAllWindows()

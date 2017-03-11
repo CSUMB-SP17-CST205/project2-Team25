@@ -26,7 +26,7 @@ for p in range (1, 3):
 
 img = cv2.imread("1.jpg")
 
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)         
 
 faces = face_cascade.detectMultiScale(gray, 1.485, 5)
 
