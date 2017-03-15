@@ -13,7 +13,7 @@ def medianOdd(myList):
 # Returns the object located at the middleIndex
     return sortedValues[middleIndex]
 ###             ###              ###
-
+#comment check
 # Leaves a blank array to store the images in
 imgs = []   
 # A loop to iterate through the images
