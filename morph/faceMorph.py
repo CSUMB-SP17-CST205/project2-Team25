@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import numpy as np
 import cv2
 import sys
@@ -84,8 +83,8 @@ if __name__ == '__main__' :
     img2 = np.float32(img2)
 
     # Read array of corresponding points
-    points1 = readPoints(filename1 + '.txt')
-    points2 = readPoints(filename2 + '.txt')
+    points1 = readPoints('coordinates1.txt')
+    points2 = readPoints('coordinates2.txt')
     points = [];
 
     # Compute weighted average point coordinates
@@ -109,12 +108,13 @@ if __name__ == '__main__' :
             
             t1 = [points1[x], points1[y], points1[z]]
             t2 = [points2[x], points2[y], points2[z]]
-            t = [ points[x], points[y], points[z] ]
+            t = [points[x], points[y], points[z]]
 
             # Morph one triangle at a time.
             morphTriangle(img1, img2, imgMorph, t1, t2, t, alpha)
 
 
     # Display Result
-    cv2.imshow("Morphed Face", np.uint8(imgMorph))
+    #cv2.imshow("Morphed Face", np.uint8(imgMorph))
+    cv2.imwrite('Morphed.jpg',imgMorph)
     cv2.waitKey(0)
