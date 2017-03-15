@@ -1,0 +1,13 @@
+facemorph.py - Satya Mallick
+http://www.learnopencv.com/face-morph-using-opencv-cpp-python/
+
+triangles.py - Satya Mallick
+https://github.com/spmallick/learnopencv/blob/master/Delaunay/delaunay.py
+
+Landmark detectin / points.py 
+http://stackoverflow.com/questions/39793680/how-to-get-points-coordinate-position-in-the-face-landmark-detection-program-of
+
+used dlib - c++ library 
+
+used skimage 
+
